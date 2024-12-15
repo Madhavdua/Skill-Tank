@@ -1,0 +1,115 @@
+body {
+    background-color: aliceblue;
+}
+
+.profile {
+    grid-area: profile;
+}
+
+.wanted {
+    grid-area: wanted;
+}
+
+.activity {
+    grid-area: activity;
+}
+
+.skills {
+    grid-area: skills;
+}
+
+.calendar {
+    grid-area: calendar;
+}
+
+.jobs {
+    grid-area: jobs;
+}
+
+.ratings {
+    grid-area: ratings;
+}
+
+.deadline {
+    grid-area: deadline;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.layout {
+    display: grid;
+    /* grid-template-areas: 
+    'sidebar profile  wanted calendar'
+    'sidebar profile  wanted calendar'
+    'sidebar profile  wanted calendar'
+    'sidebar profile  ratings calendar'
+    'sidebar deadline  ratings activity'
+    'sidebar deadline  ratings activity'
+    'sidebar deadline  ratings activity'
+    'sidebar skills  jobs activity'
+    'sidebar skills  jobs activity'
+    'sidebar skills  jobs activity'
+    'sidebar skills  jobs activity'
+    'sidebar skills  jobs activity'; */
+    grid-template-areas:
+        "sidebar profile wanted calendar"
+        "sidebar profile wanted calendar"
+        "sidebar profile ratings calendar"
+        "sidebar deadline ratings activity"
+        "sidebar deadline ratings activity"
+        "sidebar skills jobs activity"
+        "sidebar skills jobs activity";
+    gap: 20px;
+    grid-template-columns: 1fr 3fr;
+    grid-auto-rows: auto;
+    align-items: start;
+}
+
+@media screen and (max-width:1220px) {
+    .layout {
+        grid-template-columns: auto;
+
+    }
+}
+
+@media screen and (max-width:1130px) {
+    .layout {
+        grid-template-columns: 1fr 4fr;
+        grid-template-rows: auto;
+        /* Rows adjust dynamically based on content height */
+        grid-template-areas:
+            "sidebar profile jobs"
+            "sidebar profile jobs"
+            "sidebar profile deadline"
+            "sidebar skills deadline"
+            "sidebar skills calendar"
+            "sidebar skills calendar "
+            "sidebar wanted activity"
+            "sidebar wanted activity"
+            "sidebar ratings activity";
+    }
+}
+
+@media screen and (max-width:950px) {
+    .layout {
+        grid-template-columns: 1fr 8fr;
+    }
+}
+@media screen and (max-width:850px) {
+    .layout {
+        grid-template-columns: auto;
+    }
+}
+@media screen and (max-width:800px) {
+    .layout {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .sidebar{
+        display: none;
+    }
+}
