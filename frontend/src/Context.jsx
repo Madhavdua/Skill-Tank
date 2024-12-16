@@ -122,9 +122,7 @@ function Context() {
   async function addSale(formData) {
     try {
       const response = await axios.post(`${server}/api/sales/add`, formData);
-      if(response.data.success){
-        showAlert("Entry added");
-      }
+      showAlert("Entry added");
       return true;
     } catch (error) {
       showAlert("Error adding entry")

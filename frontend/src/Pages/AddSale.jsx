@@ -50,7 +50,7 @@ const AddSale = () => {
     };
 
     // Handle form submission
-    const handleSubmit = (e) => {
+    const handleSubmit =async (e) => {
         e.preventDefault();
 
         // Validate all required fields
@@ -65,7 +65,7 @@ const AddSale = () => {
             alert(`Please fill in all required fields: ${missingFields.join(', ')}`);
             return;
         }
-        const res=c.addSale(formData);
+        const res=await c.addSale(formData);
         if(res===true){
             setFormData(empty);
         }
