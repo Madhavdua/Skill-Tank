@@ -13,7 +13,7 @@ function ProfileCard() {
   ];
 
   return (
-    <div className="card shadow" style={{ width: '300px', height:"auto" }}>
+    <div className="card shadow profile-card" style={{ width: '300px', height:"auto" }}>
       <div className="card-body p-3 d-flex flex-column align-items-center ">
         <div className="text-center mb-4 ">
           <img
@@ -24,8 +24,11 @@ function ProfileCard() {
           />
           <h3 className="mb-1">John Antony</h3>
           <h6 className="text-muted">"IT Specialist"</h6>
-        </div>
+        </div >
+        <div className="">
           <Bio />
+
+        </div>
       </div>
     </div>
   );

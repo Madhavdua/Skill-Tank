@@ -2,7 +2,7 @@ import React from 'react';
 
 const RatingCard= () => {
   return (
-    <div className=" card bg-primary text-white" style={{ width: '350px' }}>
+    <div className=" card bg-primary text-white hvr-push" style={{ width: '300px' }}>
       <div className="p-3">
         <div className="d-flex flex-column">
           <small className="text-light fw-bold">Latest Rating</small>

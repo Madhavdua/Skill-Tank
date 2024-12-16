@@ -7,18 +7,16 @@ import myContext from '../CreateContext';
 const Header = () => {
   const c = useContext(myContext);
   const [burger, setburger] = useState(true);
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     c.setpayload(c.decodeToken());
-
-    // Check window size and adjust mobile header visibility
     const w = window.innerWidth;
     if (w < 800) {
       const original = document.getElementById('header-ext');
       original.classList.add("d-none");
       const mobile = document.getElementById('mobile-header');
-      mobile.classList="d-flex justify-content-between p-3";
+      mobile.classList = "d-flex justify-content-between p-3";
     }
   }, []);
   function handleLogout() {
@@ -28,7 +26,7 @@ const Header = () => {
       navigate('/');
       window.location.reload();
     }, 1000);
-    
+
   }
 
   function handleBurger() {
@@ -39,13 +37,17 @@ const Header = () => {
 
   return (
     <>
+
+      {/* header for mobile  */}
       <div id='mobile-header' className="d-none" >
         <div className="fw-bold fs-4 text-dark">
           a<span className="text-primary">Ex</span>
         </div>
+
+
         <div className="menu-cont d-flex flex-column align-items-end" >
 
-          <button id="menu-toggle" onClick={handleBurger} className="btn btn-outline-dark " style={{width:"fit-content"}}>
+          <button id="menu-toggle" onClick={handleBurger} className="btn btn-outline-dark " style={{ width: "fit-content" }}>
             {burger ? <Menu size={20} /> : <X size={20} />}
           </button>
 
@@ -60,6 +62,9 @@ const Header = () => {
           </div>
         </div>
       </div>
+
+
+      {/* header for full screen */}
       <div id='header-ext' className="d-flex justify-content-between align-items-center p-3 bg-white shadow-sm border-bottom">
         {/* Logo */}
         <div className="fw-bold fs-4 text-dark">
@@ -67,15 +72,15 @@ const Header = () => {
         </div>
 
         <nav id='' className="d-flex align-items-center gap-4">
-          <Link to="/" className="d-flex align-items-center text-dark text-decoration-none">
+          <Link to="/" className="d-flex align-items-center text-dark text-decoration-none hvr-glow p-2 rounded-pill ">
             <Home size={20} />
             <span className="ms-2 d-none d-md-inline">Overview</span>
           </Link>
-          <Link to="/analytics" className="d-flex align-items-center text-dark text-decoration-none">
+          <Link to="/analytics" className="d-flex align-items-center text-dark text-decoration-none hvr-glow p-2 rounded-pill ">
             <BarChart size={20} />
             <span className="ms-2 d-none d-md-inline">Analytics</span>
           </Link>
-          <Link to="/settings" className="d-flex align-items-center text-dark text-decoration-none">
+          <Link to="/settings" className="d-flex align-items-center text-dark text-decoration-none hvr-glow p-2 rounded-pill ">
             <Settings size={20} />
             <span className="ms-2 d-none d-md-inline">Settings</span>
           </Link>

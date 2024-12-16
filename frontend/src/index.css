@@ -1,6 +1,69 @@
 body {
-    background-color: aliceblue;
+    background: rgb(242,231,229);
+background: linear-gradient(90deg, rgba(242,231,229,1) 0%, rgba(221,255,252,1) 79%, rgba(246,246,246,1) 100%);
 }
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay-content {
+    max-height: 80vh;
+    overflow-y: scroll;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+}
+.profile-card{
+    background-color: #f0f0f0;;
+    transition: all 0.5s ease-in;
+}
+.profile-card:hover{
+    background-color:  #c7f4f4;
+    
+}
+.skills-card {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .skills-card:hover {
+    background-color: #f0e6ff; /* Light purple background on hover */
+  }
+  
+  .skill-name {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .skills-card:hover .skill-name {
+    color: #6f42c1; /* Change skill name color to purple on hover */
+  }
+  
+  .progress-bar {
+    height: 10px;
+    background-color: #6f42c1; /* Default progress bar color */
+  }
+  
+  
+
+
+/* layout */
 
 .profile {
     grid-area: profile;
@@ -62,7 +125,7 @@ body {
         "sidebar skills jobs activity"
         "sidebar skills jobs activity";
     gap: 20px;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 4fr;
     grid-auto-rows: auto;
     align-items: start;
 }

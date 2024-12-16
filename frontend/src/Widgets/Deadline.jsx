@@ -7,10 +7,10 @@ function Deadline() {
     ]
     return (
         <>
-            <div className="card shadow" style={{ width: '300px' }}>
+            <div className="card shadow hvr-buzz-out" style={{ width: '300px' }}>
                 <div className="card-body">
                     <div className="mx-1 text-center d-flex flex-column align-items-start">
-                        <h5 className="card-title my-2 text-dark-emphasis">Deadline</h5>
+                        <h5 className="card-title my-1 hvr-pulse text-dark-emphasis hvr-underline-from-right p-1">Deadline</h5>
                     </div>
 
                     <div className="my-2 d-flex justify-content-evenly">

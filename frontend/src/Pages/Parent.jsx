@@ -10,6 +10,7 @@ import Alert from './Alert'
 import Signup from './Signup';
 import AddSale from './AddSale';
 import ShowSale from './ShowSale';
+import SeeAll from '../Widgets/SeeAll';
 
 
 function Parent() {
@@ -22,6 +23,7 @@ function Parent() {
     <HashRouter>
       <Alert/>
       {loggedIn && <Header/>}
+      {c.showModal && <SeeAll/>}
       {/* <Header/> */}
     <Routes>
       <Route path='/'  element={loggedIn?<Home/>:<Login/>} />

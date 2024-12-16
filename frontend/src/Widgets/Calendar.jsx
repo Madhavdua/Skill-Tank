@@ -50,24 +50,18 @@ function Calendar() {
       target.classList.add("rounded-circle")
     })
   }
-  // function stylingElement(){
-  //   const elements=document.querySelectorAll('td');
-    
-
-  // }
   useEffect(() => {
     addRows();
     markTasks();
-    // stylingElement();
   }, [])
 
 
   return (
     <div className="card shadow" style={{ width: "300px" }}>
       <div className="card-body">
-        <div className="d-flex justify-content-between align-items-center mb-3">
+        <div className="d-flex justify-content-between align-items-center ">
           {/* <button className="btn btn-light" onClick={prevMonth}>&lt;</button> */}
-          <h5 className=" mb-2 text-center">
+          <h5 className=" p-2 text-center hvr-sweep-to-left">
             {month}, {year}
           </h5>
           {/* <button className="btn btn-light" onClick={nextMonth}>&gt;</button> */}

@@ -36,7 +36,7 @@ const Sidebar = () => {
           return (
             <button onClick={() => handleClick(index)}
               key={index}
-              className={`btn d-flex justify-content-center align-items-center p-2 rounded 
+              className={`btn d-flex justify-content-center align-items-center p-2 rounded hvr-glow
                 ${item.isActive ? 'bg-primary text-white' : 'text-secondary'}`}
             >
               <Icon size={24} strokeWidth={1.5} />

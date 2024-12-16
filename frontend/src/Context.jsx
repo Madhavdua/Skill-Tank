@@ -11,14 +11,17 @@ function Context() {
   const [loggedIn, setloggedIn] = useState(false);
   const [alert, setalert] = useState(false);
   const [msg, setmsg] = useState('');
+  const [showModal, setshowModal] = useState(false);
+  const [modalElement, setmodalElement] = useState(null);
+
   // const server = "http://127.0.0.1";
   const server = import.meta.env.VITE_SERVER;
   // console.log(server);
-  const fakeDetails={
-      username: 'johndoe',
-      email: 'john.doe@example.com',
-      password: '********'
-    }
+  const fakeDetails = {
+    username: 'johndoe',
+    email: 'john.doe@example.com',
+    password: '********'
+  }
   const [payload, setpayload] = useState(fakeDetails)
 
   function decodeToken() {
@@ -27,7 +30,7 @@ function Context() {
     if (token) {
       setloggedIn(true);
       const decodedPayload = jwtDecode(token);
-      decodedPayload.password="********";
+      decodedPayload.password = "********";
       return decodedPayload;
     } else {
       setloggedIn(false);
@@ -96,8 +99,8 @@ function Context() {
       return null;
     }
   }
-  async function edit(username,email) {
-    try{
+  async function edit(username, email) {
+    try {
       const response = await axios.put(`${server}/api/edit/${payload.id}`, {
         username,
         email,
@@ -137,12 +140,12 @@ function Context() {
       console.error("Error fetching sales data:", error);
       return null;
     }
-    
+
   }
 
 
   return (
-    <myContext.Provider value={{ loggedIn, setloggedIn, login, alert, setalert, msg, setmsg, showAlert, signUp,payload,setpayload, decodeToken,edit,addSale ,getSales}}>
+    <myContext.Provider value={{ loggedIn, setloggedIn, login, alert, setalert, msg, setmsg, showAlert, signUp, payload, setpayload, decodeToken, edit, addSale, getSales ,showModal,setshowModal,modalElement,setmodalElement}}>
       <Parent />
     </myContext.Provider>
   )
