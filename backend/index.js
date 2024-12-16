@@ -2,11 +2,11 @@ const express = require("express");
 const app = express();
 
 require('dotenv').config();
-const port = process.env.PORT || 80;
+const port = process.env.PORT;
 
 
 const db = require("./db");
-const URI = process.env.URI || "mongodb://localhost:27017/Skill-Tank";
+const URI = process.env.URI;
 db.connect(URI);
 
 // to avoid cors error

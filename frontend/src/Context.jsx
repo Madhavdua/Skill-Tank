@@ -11,7 +11,9 @@ function Context() {
   const [loggedIn, setloggedIn] = useState(false);
   const [alert, setalert] = useState(false);
   const [msg, setmsg] = useState('');
-  const server = "http://127.0.0.1";
+  // const server = "http://127.0.0.1";
+  const server = import.meta.env.VITE_SERVER;
+  console.log(server);
   const fakeDetails={
       username: 'johndoe',
       email: 'john.doe@example.com',
